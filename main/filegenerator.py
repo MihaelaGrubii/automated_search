@@ -7,12 +7,32 @@ from docx import Document
 
 counter = 0
 
+'''File Generator/
+
+This script has 2 main methods that will add following functionalities to your project:
+    addToFile(name, content, nbr) - Create, append to a .txt file
+        :name: A string for query subject
+        :content: A list with responses
+        :nbr: - A number of results - that is not necessary, since you can get the length of the list
+    add_hyperlink(paragraph, url, text, color, underline) - function that places a hyperlink within a paragraph object
+        All credits to johanvandegriff for his example on Github
+        :paragraph: - [Paragraph][the paragraph we are adding the hyperlink to]
+        :url: - A string with the required url
+        :text: - A text displayed for the url
+        :return: The hyperlink object
+    addToDocx(name, content, nbr) - Create a .docx file
+        :name: A string for query subject
+        :content: A list with responses
+        :nbr: - A number of results - that is not necessary, since you can get the length of the list
+
+'''
+
 
 def addToFile(name, content, nbr):
     topic = name
     name = (name.replace(' ', '')[:25])
     for char in name:
-        if char in " ?.!/;:":
+        if char in ' ?.!/;:':
             name = name.replace(char, '')
 
     name = name + '.txt'
